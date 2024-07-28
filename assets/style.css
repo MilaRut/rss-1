@@ -35,6 +35,21 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header,
+footer {
+  flex-shrink: 0;
+}
+
+main {
+  flex-grow: 1;
+}
+
 img {
   display: block;
   width: 100%;
@@ -86,6 +101,11 @@ img {
   letter-spacing: 0.06em;
   color: var(--color-primary);
   margin-bottom: 10px;
+  transition: opacity 0.3s ease-in;
+}
+
+.header__title:hover {
+  opacity: 0.5;
 }
 
 .header__subtitle {
@@ -249,6 +269,15 @@ img {
   background-color: var(--color-light-s);
   border-radius: 9px;
   overflow: hidden;
+}
+
+.pets__item:hover {
+  background: var(--color-light-xl);
+}
+
+.pets__item:hover .pets__more-btn {
+  background-color: var(--color-primary-light);
+  border-color: var(--color-primary-light);
 }
 
 .pets__content {
@@ -465,6 +494,7 @@ img {
 }
 
 .donation__card {
+  display: block;
   border-radius: 9px;
   padding: 10px;
   padding-left: 60px;
@@ -538,12 +568,12 @@ img {
   transition: opacity 0.3s ease-in;
 }
 
-.footer__contacts--links .footer__link {
-  padding-left: 60px;
+.footer__link:hover {
+  opacity: 0.5;
 }
 
-.footer__contacts--links .footer__link:hover {
-  opacity: 0.5;
+.footer__contacts--links .footer__link {
+  padding-left: 60px;
 }
 
 .footer__link::before {
