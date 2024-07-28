@@ -96,6 +96,10 @@ img {
   border-bottom: 3px solid var(--color-primary);
 }
 
+.nav__item:not(.active) .nav__item-link:hover {
+  border-bottom: 3px solid var(--color-primary);
+}
+
 .nav__item-link {
   color: var(--color-light-s);
 }
