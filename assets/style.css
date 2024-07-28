@@ -236,39 +236,41 @@ img {
   position: relative;
 }
 
-.slider__list {
+.pets__list {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 90px;
   margin-bottom: 60px;
+
 }
 
-.slider__item {
+.pets__item {
   background-color: var(--color-light-s);
   border-radius: 9px;
   overflow: hidden;
 }
 
-.slide__content {
+.pets__content {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.slide__image {
+.pets__image {
   width: 270px;
   height: 270px;
   overflow: hidden;
   margin-bottom: 29px;
 }
 
-.slide__image img {
+.pets__image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.slide__name {
+.pets__name {
   font-family: var(--font-family);
   font-weight: 400;
   font-size: 20px;
@@ -278,10 +280,11 @@ img {
   margin-bottom: 31px;
 }
 
-.slide__link {
+.pets__more-btn {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: transparent;
   border: 2px solid var(--color-primary);
   border-radius: 100px;
   padding: 13px 43px;
@@ -292,10 +295,11 @@ img {
   letter-spacing: 0.06em;
   color: var(--color-dark-3xl);
   margin-bottom: 30px;
-  transition: background-color 0.3s ease-in;
+  cursor: pointer;
+  transition: all 0.3s ease-in;
 }
 
-.slide__link:hover {
+.pets__more-btn:hover {
   background-color: var(--color-primary-light);
   border-color: var(--color-primary-light);
 }
@@ -322,7 +326,7 @@ img {
   top: 50%;
   cursor: pointer;
   pointer-events: all;
-  transition: background-color 0.3s ease-in;
+  transition: all 0.3s ease-in;
 }
 
 .slider__btn:hover {
@@ -575,4 +579,82 @@ img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+/* INTERNAL PAGES */
+
+.internal-page .header {
+  padding: 30px 0;
+}
+
+.internal-page .header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;  
+}
+
+.internal-page .header__title {
+  color: var(--color-dark-l);
+}
+
+.internal-page .header__subtitle {
+  color: var(--color-dark-3xl);
+}
+
+.internal-page .nav__item-link,
+.internal-page .nav__item-link.active:hover {
+  color: var(--color-dark-l);
+}
+.internal-page .nav__item-link:hover  {
+  color: var(--color-dark-3xl);
+}
+
+.internal-page .pets .container {
+  padding: 0;
+}
+
+.internal-page .pets .pets__list {
+  gap: 30px 40px;
+}
+
+.pag {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.pag__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 115%;
+  letter-spacing: 0.06em;
+  text-align: center;
+  color: var(--color-dark-3xl);
+  border: 2px solid var(--color-primary);
+  transition: all 0.3s ease-in;
+}
+
+.pag__link:hover {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  opacity: 0.5;
+}
+
+.pag__link.disabled {
+  color: var(--color-dark-s);
+  border: 2px solid var(--color-dark-s);
+  pointer-events: none;
+}
+
+.pag__link--curr {
+  background: var(--color-primary);
+  pointer-events: none; 
 }

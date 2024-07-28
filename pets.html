@@ -8,35 +8,37 @@
   <link rel="stylesheet" href="./assets/style.css">
 </head>
 
-<body>
+<body class="internal-page">
   <header class="header">
-    <div class="header__logo">
-      <h1>
-        <span class="header__title">Cozy House</span>
-        <span class="header__subtitle">Shelter for pets in Boston</span>
-      </h1>
-    </div>
-    <div class="header__nav nav">
-      <ul class="nav__list list-reset">
-        <li class="nav__item">
-          <a href="index.html" class="nav__item-link">About the shelter</a>
-        </li>
-        <li class="nav__item active">
-          <a href="pets.html" class="nav__item-link">Our pets</a>
-        </li>
-        <li class="nav__item">
-          <a href="#help" class="nav__item-link">Help the shelter</a>
-        </li>
-        <li class="nav__item">
-          <a href="#contacts" class="nav__item-link">Contacts</a>
-        </li>
-      </ul>
+    <div class="container">
+      <div class="header__logo">
+        <h1>
+          <span class="header__title">Cozy House</span>
+          <span class="header__subtitle">Shelter for pets in Boston</span>
+        </h1>
+      </div>
+      <div class="header__nav nav">
+        <ul class="nav__list list-reset">
+          <li class="nav__item">
+            <a href="index.html" class="nav__item-link">About the shelter</a>
+          </li>
+          <li class="nav__item">
+            <a href="pets.html" class="nav__item-link active">Our pets</a>
+          </li>
+          <li class="nav__item">
+            <a href="#help" class="nav__item-link">Help the shelter</a>
+          </li>
+          <li class="nav__item">
+            <a href="#contacts" class="nav__item-link">Contacts</a>
+          </li>
+        </ul>
+      </div>
     </div>
   </header>
   <main class="main">
     <section class="pets">
       <div class="container">
-        <h2 class="pets__title">Our friends who are looking for a house</h2>
+        <h2 class="pets__title">Our friends who are&nbsp;looking for a house</h2>
         <ul class="pets__list list-reset">
           <li class="pets__item">
             <div class="pets__content">
@@ -44,7 +46,7 @@
                 <img src="./assets/img/pets-katrine.png" width="270" height="270" alt="Photo of a cat.">
               </div>
               <p class="pets__name">Katrine</p>
-              <a href="#">Learn more</a>
+              <button type="button" class="pets__more-btn">Learn more</button>
             </div>
           </li>
           <li class="pets__item">
@@ -53,7 +55,7 @@
                 <img src="./assets/img/pets-jennifer.png" width="270" height="270" alt="Photo of a puppy.">
               </div>
               <p class="pets__name">Jennifer</p>
-              <a href="#">Learn more</a>
+              <button type="button" class="pets__more-btn">Learn more</button>
             </div>
           </li>
           <li class="pets__item">
@@ -62,55 +64,81 @@
                 <img src="./assets/img/pets-woody.png" width="270" height="270" alt="Photo of a dog.">
               </div>
               <p class="pets__name">Woody</p>
-              <a href="#">Learn more</a>
+              <button type="button" class="pets__more-btn">Learn more</button>
+            </div>
+          </li>
+          <li class="pets__item">
+            <div class="pets__content">
+              <div class="pets__image">
+                <img src="./assets/img/pets-sophia.png" width="270" height="270" alt="Photo of a dog.">
+              </div>
+              <p class="pets__name">Sophia</p>
+              <button type="button" class="pets__more-btn">Learn more</button>
+            </div>
+          </li>
+          <li class="pets__item">
+            <div class="pets__content">
+              <div class="pets__image">
+                <img src="./assets/img/pets-timmy.png" width="270" height="270" alt="Photo of a dog.">
+              </div>
+              <p class="pets__name">Timmy</p>
+              <button type="button" class="pets__more-btn">Learn more</button>
+            </div>
+          </li>
+          <li class="pets__item">
+            <div class="pets__content">
+              <div class="pets__image">
+                <img src="./assets/img/pets-charly.png" width="270" height="270" alt="Photo of a dog.">
+              </div>
+              <p class="pets__name">Charly</p>
+              <button type="button" class="pets__more-btn">Learn more</button>
+            </div>
+          </li>
+          <li class="pets__item">
+            <div class="pets__content">
+              <div class="pets__image">
+                <img src="./assets/img/pets-scarlett.png" width="270" height="270" alt="Photo of a dog.">
+              </div>
+              <p class="pets__name">Scarlett</p>
+              <button type="button" class="pets__more-btn">Learn more</button>
+            </div>
+          </li>
+          <li class="pets__item">
+            <div class="pets__content">
+              <div class="pets__image">
+                <img src="./assets/img/pets-freddie.png" width="270" height="270" alt="Photo of a dog.">
+              </div>
+              <p class="pets__name">Freddie</p>
+              <button type="button" class="pets__more-btn">Learn more</button>
             </div>
           </li>
         </ul>
         <div class="pets__pagination pag">
-          <a href="#" class="pag__link pag__link--first disabled">
-            <svg width="25" height="11" viewBox="0 0 25 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M9.94687 10.7852L0.913671 6.08789V4.98438L9.94687 0.287109V1.625L2.43711 5.53125L9.94687 9.44727V10.7852ZM24.018 10.7852L14.9848 6.08789V4.98438L24.018 0.287109V1.625L16.5082 5.53125L24.018 9.44727V10.7852Z"
-                fill="#CDCDCD" />
-            </svg>
-          </a>
-          <a href="#" class="pag__link pag__link--prev disabled">
-            <svg width="10" height="11" viewBox="0 0 10 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M9.98242 10.7852L0.949219 6.08789V4.98438L9.98242 0.287109V1.625L2.47266 5.53125L9.98242 9.44727V10.7852Z"
-                fill="#CDCDCD" />
-            </svg>
-          </a>
+          <a href="#" class="pag__link pag__link--first disabled">&#60;&#60;</a>
+          <a href="#" class="pag__link pag__link--prev disabled">&#60;</a>
           <a href="#" class="pag__link pag__link--curr">1</a>
-          <a href="#" class="pag__link pag__link--next">
-            <svg width="10" height="11" viewBox="0 0 10 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M9.04102 6.08789L0.0078125 10.7852V9.44727L7.51758 5.53125L0.0078125 1.625V0.287109L9.04102 4.98438V6.08789Z"
-                fill="#292929" />
-            </svg>
-          </a>
-          <a href="#" class="pag__link pag__link--last">
-            <svg width="25" height="11" viewBox="0 0 25 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M10.0055 6.08789L0.972265 10.7852V9.44727L8.48203 5.53125L0.972265 1.625V0.287109L10.0055 4.98438V6.08789ZM24.0766 6.08789L15.0434 10.7852V9.44727L22.5531 5.53125L15.0434 1.625V0.287109L24.0766 4.98438V6.08789Z"
-                fill="#292929" />
-            </svg>
-          </a>
+          <a href="#" class="pag__link pag__link--next">&#62;</a>
+          <a href="#" class="pag__link pag__link--last">&#62;&#62;</a>
         </div>
       </div>
     </section>
   </main>
+
   <footer class="footer" id="contacts">
     <div class="container">
-      <div class="footer__contacts">
+      <div class="footer__contacts footer__contacts--links">
         <h3 class="footer__title title">For questions and suggestions</h3>
-        <a class="footer__link" href="mailto:email@shelter.com">email@shelter.com</a>
-        <a class="footer__link" href="tel:+136745677554">+13 674 567 75 54</a>
+        <a class="footer__link footer__link--email" href="mailto:email@shelter.com">email@shelter.com</a>
+        <a class="footer__link footer__link--tel" href="tel:+136745677554">+13 674 567 75 54</a>
       </div>
-      <div class="footer__contacts">
+      <div class="footer__contacts footer__contacts--address">
         <h3 class="footer__title title">We are waiting for your visit</h3>
-        <a class="footer__link" href="#">1 Central Street, Boston (entrance from the store)</a>
-        <a class="footer__link" href="#">18 South Park, London </a>
+        <a class="footer__link footer__link--address-1">1 Central Street, Boston (entrance from the
+          store)</a>
+        <a class="footer__link footer__link--address-2">18 South Park, London</a>
+      </div>
+      <div class="footer__image">
+        <img src="./assets/img/footer-puppy.png" width="300" height="310" alt="Puppy.">
       </div>
     </div>
   </footer>
