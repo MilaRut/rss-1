@@ -20,8 +20,8 @@
         </div>
         <div class="header__nav nav">
           <ul class="nav__list list-reset">
-            <li class="nav__item active">
-              <a href="#" class="nav__item-link">About the shelter</a>
+            <li class="nav__item">
+              <a href="#" class="nav__item-link active">About the shelter</a>
             </li>
             <li class="nav__item">
               <a href="pets.html" class="nav__item-link">Our pets</a>
@@ -69,7 +69,7 @@
     </section>
     <section class="pets">
       <div class="container">
-        <h3 class="pets__title title">Our friends who are looking for a house</h3>
+        <h3 class="pets__title title">Our friends who are&nbsp;looking for a house</h3>
         <div class="pets__slider slider">
           <ul class="slider__list list-reset">
             <li class="slider__item slide">
@@ -77,8 +77,8 @@
                 <div class="slide__image">
                   <img src="./assets/img/pets-katrine.png" width="270" height="270" alt="Photo of a cat.">
                 </div>
-                <p class="slider__name">Katrine</p>
-                <a href="#">Learn more</a>
+                <p class="slide__name">Katrine</p>
+                <a class="slide__link" href="#">Learn more</a>
               </div>
             </li>
             <li class="slider__item slide">
@@ -86,8 +86,8 @@
                 <div class="slide__image">
                   <img src="./assets/img/pets-jennifer.png" width="270" height="270" alt="Photo of a puppy.">
                 </div>
-                <p class="slider__name">Jennifer</p>
-                <a href="#">Learn more</a>
+                <p class="slide__name">Jennifer</p>
+                <a class="slide__link" href="#">Learn more</a>
               </div>
             </li>
             <li class="slider__item slide">
@@ -95,14 +95,22 @@
                 <div class="slide__image">
                   <img src="./assets/img/pets-woody.png" width="270" height="270" alt="Photo of a dog.">
                 </div>
-                <p class="slider__name">Woody</p>
-                <a href="#">Learn more</a>
+                <p class="slide__name">Woody</p>
+                <a class="slide__link" href="#">Learn more</a>
               </div>
             </li>
           </ul>
           <div class="slider__buttons">
-            <button type="button" class="slider__btn slider__btn--prev"></button>
-            <button type="button" class="slider__btn slider__btn--next"></button>
+            <button type="button" class="slider__btn slider__btn--prev">
+              <svg width="14" height="6" viewBox="0 0 14 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14 2V4H3V6L0 3L3 0V2H14Z" fill="currentColor" />
+              </svg>
+            </button>
+            <button type="button" class="slider__btn slider__btn--next">
+              <svg width="14" height="6" viewBox="0 0 14 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14 2V4H3V6L0 3L3 0V2H14Z" fill="currentColor" />
+              </svg>
+            </button>
           </div>
         </div>
         <a class="pets__link" href="pets.html">Get to know the rest</a>
@@ -110,7 +118,7 @@
     </section>
     <section class="help" id="help">
       <div class="container">
-        <h3 class="help__title title">How you can help our shelter</h3>
+        <h3 class="help__title title">How you can&nbsp;help our shelter</h3>
         <ul class="help__list list-reset">
           <li class="help__item">
             <div class="help__image">
@@ -187,15 +195,19 @@
   </main>
   <footer class="footer" id="contacts">
     <div class="container">
-      <div class="footer__contacts">
+      <div class="footer__contacts footer__contacts--links">
         <h3 class="footer__title title">For questions and suggestions</h3>
-        <a class="footer__link" href="mailto:email@shelter.com">email@shelter.com</a>
-        <a class="footer__link" href="tel:+136745677554">+13 674 567 75 54</a>
+        <a class="footer__link footer__link--email" href="mailto:email@shelter.com">email@shelter.com</a>
+        <a class="footer__link footer__link--tel" href="tel:+136745677554">+13 674 567 75 54</a>
       </div>
-      <div class="footer__contacts">
+      <div class="footer__contacts footer__contacts--address">
         <h3 class="footer__title title">We are waiting for your visit</h3>
-        <a class="footer__link" href="#">1 Central Street, Boston (entrance from the store)</a>
-        <a class="footer__link" href="#">18 South Park, London </a>
+        <a class="footer__link footer__link--address-1">1 Central Street, Boston (entrance from the
+          store)</a>
+        <a class="footer__link footer__link--address-2">18 South Park, London</a>
+      </div>
+      <div class="footer__image">
+        <img src="./assets/img/footer-puppy.png" width="300" height="310" alt="Puppy.">
       </div>
     </div>
   </footer>
