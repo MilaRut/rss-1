@@ -155,6 +155,10 @@ img {
   color: var(--color-light-s);
 }
 
+.nav__item-link.active {
+  pointer-events: none;
+}
+
 .nav__item-link.active,
 .nav__item-link:active {
   font-family: var(--second-family);
