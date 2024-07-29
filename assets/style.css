@@ -1,3 +1,18 @@
+@font-face {
+  font-style: normal;
+  font-weight: 400;
+  font-family: "Georgia";
+  font-display: swap;
+  src: url("../assets/fonts/Georgia.woff2") format("woff2"), url("../assets/fonts/Georgia.woff2") format("woff");
+}
+@font-face {
+  font-style: normal;
+  font-weight: 400;
+  font-family: "Arial";
+  font-display: swap;
+  src: url("../assets/fonts/ArialMT.woff2") format("woff2"), url("../assets/fonts/ArialMT.woff") format("woff");
+}
+
 :root {
   --color-primary: #f1cdb3;
   --color-primary-light: #fddcc4;
