@@ -1155,6 +1155,7 @@ img {
     min-width: 260px;
     max-width: 260px;
     height: auto;
+    margin-top: 2px;
   }
 
   .internal-page .pets .pets__list {
