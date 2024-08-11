@@ -303,6 +303,7 @@ img {
   overflow: hidden;
   transition: all 0.3s ease-in;
   min-width: 270px;
+  height: 435px;
 }
 
 .pets__item:hover {
