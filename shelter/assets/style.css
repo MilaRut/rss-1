@@ -448,7 +448,7 @@ img {
   max-width: 310px;
   text-align: center;
   margin: 0 auto;
-  margin-bottom: 60px;
+  margin-bottom: 59px;
 }
 
 .help__list {
@@ -777,7 +777,8 @@ img {
   }
 
   .about .container {
-    flex-direction: column-reverse;
+    justify-content: space-evenly;
+    gap: 20px;
   }
 
   .about__text {
@@ -796,10 +797,6 @@ img {
     max-width: 580px;
     overflow: hidden;
     gap: 40px;
-  }
-
-  .help__title {
-    margin-bottom: 59px;
   }
 
   .help__list {
@@ -861,6 +858,19 @@ img {
 
   .internal-page .pets .pets__title {
     margin-bottom: 30px;
+    padding: 0 5px;
+    max-width: 410px;
+  }
+}
+
+@media (max-width: 800px) {
+  .about .container {
+    flex-direction: column-reverse;
+    gap: 0;
+  }
+
+  .donation__subtitle {
+    margin-bottom: 19px;
   }
 }
 
@@ -977,6 +987,10 @@ img {
     color: var(--color-light-s);
   }
 
+  .start__intro {
+    padding-top: 60px;
+  }
+
   .start__text {
     min-width: 100%;
     text-align: center;
@@ -1023,7 +1037,7 @@ img {
   }
 
   .pets {
-    padding: 42px 0;
+    padding: 42px 0 41px;
   }
 
   .pets__title {
@@ -1057,9 +1071,13 @@ img {
     margin-bottom: 115px;
     gap: 0;
   }
+  
+  .pets .pets__image {
+    margin-bottom: 30px;
+  }
 
   .help {
-    padding: 42px 0;
+    padding: 42px 0 41px;
   }
 
   .help__title {
@@ -1087,7 +1105,7 @@ img {
   }
 
   .donation {
-    padding: 42px 0;
+    padding: 42px 0 43px;
   }
   
   .donation__title {
@@ -1155,6 +1173,7 @@ img {
     min-width: 260px;
     max-width: 260px;
     height: auto;
+    margin-top: 2px;
   }
 
   .internal-page .pets .pets__list {
@@ -1170,10 +1189,6 @@ img {
     font-size: 25px;
     line-height: 1.28;
     margin-bottom: 42px;
-  }
-
-  .internal-page .pets .pets__image {
-    margin-bottom: 30px;
   }
 
   .pag {
