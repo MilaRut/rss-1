@@ -1,15 +1,35 @@
-const assessment = `
-Страница Main (60)
-Проверка верстки +7
-Вёрстка соответствует макету +35
-Требования к css +6
-Интерактивность элементов +12
+const triggers = document.querySelectorAll('.js-dropdown-trigger');
 
-Страница Pets (40)
-Проверка верстки +7
-Вёрстка соответствует макету +15
-Требования к css +4
-Интерактивность элементов +14
-`
+function showDropdownList() {
+  triggers.forEach((el) => {
+    let currentEl = el;
+    let dataId = currentEl.getAttribute('data-id');
+    let currentContent = document.querySelector(dataId);
+    el.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (!currentContent.classList.contains('is-active')) {
+        currentContent.classList.add('is-active');
+        currentEl.classList.add('is-active');
+      } else {
+        currentContent.classList.remove('is-active');
+        currentEl.classList.remove('is-active');
+      }
+    });
+    document.addEventListener('click', (e) => {
+      if (currentContent.classList.contains('is-active') && e.target !== el && !el.contains(e.target) && currentContent.contains(e.target)) {
+        currentContent.classList.remove('is-active');
+        currentEl.classList.remove('is-active');
+      }
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        currentContent.classList.remove('is-active');
+        currentEl.classList.remove('is-active');
+      }
+    });
+  });
+}
 
-console.log(assessment);
+document.addEventListener('DOMContentLoaded', function () {
+  showDropdownList();
+});

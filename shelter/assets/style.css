@@ -53,6 +53,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 header,
@@ -159,8 +160,7 @@ img {
   pointer-events: none;
 }
 
-.nav__item-link.active,
-.nav__item-link:active {
+.nav__item-link.active {
   font-family: var(--second-family);
   font-weight: 400;
   font-size: 15px;
@@ -410,6 +410,11 @@ img {
 
 .slider__btn--next {
   transform: rotate(180deg);
+  margin-left: 10px;
+}
+
+.slider__btn--prev {
+  margin-right: 10px;
 }
 
 .pets__link {
@@ -552,6 +557,7 @@ img {
 
 .footer {
   background: url("../assets/img/noise_transparent@2x.png"), var(--gradient), var(--start-screen-gradient-background);
+  background-position: center;
   padding: 40px 0 0;
 }
 
@@ -682,7 +688,10 @@ img {
 }
 
 .internal-page .pets .pets__list {
+  display: grid;
+  grid-template-columns: repeat(4, 270px);
   gap: 30px 40px;
+  max-width: 1200px;
 }
 
 .pag {
@@ -723,6 +732,13 @@ img {
 .pag__link--curr {
   background: var(--color-primary);
   pointer-events: none; 
+}
+
+@media (max-width: 1230px) {
+  .internal-page .pets .pets__list {
+    grid-template-columns: repeat(3, 270px);
+    justify-content: center;
+  }
 }
 
 @media (max-width: 1130px) {
@@ -830,6 +846,21 @@ img {
   .footer__image {
     margin: 0 auto;
   }
+
+  .internal-page .pets {
+    padding: 80px 0 76px;
+  }
+
+  .internal-page .pets .pets__list {
+    grid-template-columns: repeat(2, 270px);
+    margin-bottom: 42px;
+    max-height: 1362px;
+    overflow-y: hidden;
+  }
+
+  .internal-page .pets .pets__title {
+    margin-bottom: 30px;
+  }
 }
 
 @media (max-width: 767px) {
@@ -843,9 +874,12 @@ img {
     margin: 0 auto;
   }
 
-
   .header {
     padding: 0 10px;
+  }
+
+  .internal-page .header {
+    padding: 30px 10px;
   }
 
   .header__nav-button {
@@ -854,6 +888,13 @@ img {
     height: 22px;
     background-color: transparent;
     border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease-in;
+    z-index: 10;
+  }
+
+  .header__nav-button.is-active {
+    transform: rotate(90deg);
   }
 
   .header__nav-button span {
@@ -874,6 +915,12 @@ img {
     background-color: var(--color-primary);
   }
 
+  .internal-page .header__nav-button:not(.is-active) span,
+  .internal-page .header__nav-button:not(.is-active) span::before,
+  .internal-page .header__nav-button:not(.is-active) span::after {
+    background-color: #000000;
+  }
+
   .header__nav-button span::before {
     top: 10px;
   }
@@ -883,7 +930,51 @@ img {
   }
 
   .nav {
-    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 320px;
+    height: 100vh;
+    background-color: var(--color-dark-3xl);
+    transform: translateX(320px);
+    transition: transform 0.2s ease-in;
+  }
+
+  .nav.is-active {
+    transform: translateX(0);
+  }
+
+  .nav__list {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 100px 0;
+    height: 100vh;
+    max-height: 823px;
+
+  }
+
+  .nav__item:not(:last-child) {
+    margin: 0;
+  }
+
+  .nav__item-link,
+  .nav__item-link.active {
+    font-size: 32px;
+    line-height: 1.6;
+  }
+
+  .internal-page .nav__item-link,
+  .nav__item-link,
+  .internal-page .nav__item-link:hover,
+  .nav__item-link:hover {
+    color: var(--color-dark-s);
+  }
+
+  .internal-page .nav__item-link.active,
+  .nav__item-link.active {
+    color: var(--color-light-s);
   }
 
   .start__text {
@@ -952,11 +1043,13 @@ img {
   .slider__btn--prev {
     left: 50%;
     transform: translateX(-92px);
+    margin-right: 0;
   }
 
   .slider__btn--next {
     right: 50%;
     transform: translateX(92px) rotate(180deg);
+    margin-left: 0;
   }
 
   .pets__list {
@@ -1058,14 +1151,33 @@ img {
     gap: 42px;
   }
 
-  .footer__link--address-2 {
-    align-self: flex-start;
-  }
-
   .footer__image {
     min-width: 260px;
     max-width: 260px;
     height: auto;
+  }
+
+  .internal-page .pets .pets__list {
+    grid-template-columns: auto;
+    margin-bottom: 45px;
+  }
+
+  .internal-page .pets {
+    padding: 42px 0;
+  }
+
+  .internal-page .pets .pets__title {
+    font-size: 25px;
+    line-height: 1.28;
+    margin-bottom: 42px;
+  }
+
+  .internal-page .pets .pets__image {
+    margin-bottom: 30px;
+  }
+
+  .pag {
+    gap: 10px;
   }
 }
 
@@ -1073,5 +1185,13 @@ img {
   .help__list {
     display: grid;
     grid-template-columns: repeat(2, 130px);
+  }
+
+  .footer__link--address-1 {
+    margin-right: 6px;
+  }
+
+  .footer__link--address-2 {
+    margin-right: 29px;
   }
 }
