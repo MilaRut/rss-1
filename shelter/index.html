@@ -21,7 +21,10 @@
             <span class="header__subtitle">Shelter for pets in Boston</span>
           </h1>
         </div>
-        <div class="header__nav nav">
+        <button type="button" class="header__nav-button js-dropdown-trigger" data-id="#nav">
+          <span></span>
+        </button>
+        <div class="header__nav nav" id="nav">
           <ul class="nav__list list-reset">
             <li class="nav__item">
               <a class="nav__item-link active">About the shelter</a>
@@ -74,6 +77,11 @@
       <div class="container">
         <h3 class="pets__title title">Our friends who are&nbsp;looking for a house</h3>
         <div class="pets__slider slider">
+          <button type="button" class="slider__btn slider__btn--prev">
+            <svg width="14" height="6" viewBox="0 0 14 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M14 2V4H3V6L0 3L3 0V2H14Z" fill="currentColor" />
+            </svg>
+          </button>
           <ul class="pets__list list-reset">
             <li class="pets__item slide">
               <div class="pets__content">
@@ -103,18 +111,11 @@
               </div>
             </li>
           </ul>
-          <div class="slider__buttons">
-            <button type="button" class="slider__btn slider__btn--prev">
-              <svg width="14" height="6" viewBox="0 0 14 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M14 2V4H3V6L0 3L3 0V2H14Z" fill="currentColor" />
-              </svg>
-            </button>
-            <button type="button" class="slider__btn slider__btn--next">
-              <svg width="14" height="6" viewBox="0 0 14 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M14 2V4H3V6L0 3L3 0V2H14Z" fill="currentColor" />
-              </svg>
-            </button>
-          </div>
+          <button type="button" class="slider__btn slider__btn--next">
+            <svg width="14" height="6" viewBox="0 0 14 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M14 2V4H3V6L0 3L3 0V2H14Z" fill="currentColor" />
+            </svg>
+          </button>
         </div>
         <a class="pets__link" href="pets.html">Get to know the rest</a>
       </div>
@@ -196,7 +197,7 @@
       </div>
     </section>
   </main>
-  
+
   <footer class="footer" id="contacts">
     <div class="container">
       <div class="footer__contacts footer__contacts--links">
@@ -205,10 +206,12 @@
         <a class="footer__link footer__link--tel" href="tel:+136745677554">+13 674 567 75 54</a>
       </div>
       <div class="footer__contacts footer__contacts--address">
-        <h3 class="footer__title title">We are waiting for your visit</h3>
-        <a href="https://maps.app.goo.gl/qX1zr4HtkAeoVrPU6" class="footer__link footer__link--address-1" target="_blank">1 Central Street, Boston (entrance from the
+        <h3 class="footer__title title">We are waiting for your&nbsp;visit</h3>
+        <a href="https://maps.app.goo.gl/qX1zr4HtkAeoVrPU6" class="footer__link footer__link--address-1"
+          target="_blank">1 Central Street, Boston<br>(entrance from the
           store)</a>
-        <a href="https://maps.app.goo.gl/sHYLRVrTD3PkYjq18" class="footer__link footer__link--address-2" target="_blank">18 South Park, London</a>
+        <a href="https://maps.app.goo.gl/sHYLRVrTD3PkYjq18" class="footer__link footer__link--address-2"
+          target="_blank">18 South Park, London</a>
       </div>
       <div class="footer__image">
         <img src="./assets/img/footer-puppy.png" width="300" height="310" alt="Puppy.">
