@@ -937,12 +937,11 @@ img {
     width: 320px;
     height: 100vh;
     background-color: var(--color-dark-3xl);
-    transform: translateX(320px);
-    transition: transform 0.2s ease-in;
+    display: none;
   }
 
   .nav.is-active {
-    transform: translateX(0);
+    display: block;
   }
 
   .nav__list {
