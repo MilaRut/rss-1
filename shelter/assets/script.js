@@ -2,6 +2,8 @@
 const triggers = document.querySelectorAll('.js-dropdown-trigger');
 const navItems = document.querySelectorAll('.nav__item');
 const body = document.querySelector('body');
+const popup = document.querySelector('.popup');
+const popupCloseBtn = document.querySelector('.popup__close-btn');
 
 function openMenu(el1, el2) {
   el1.classList.add('is-active');
@@ -89,9 +91,34 @@ function renderCards(cards) {
       <p class="pets__name">${card.name}</p>
       <button type="button" class="pets__more-btn">Learn more</button>
   </div>`;
+    cardElement.addEventListener('click', () => openPopup(card));
     petsCarousel.appendChild(cardElement);
   });
 }
+
+function openPopup(card) {
+  document.querySelector('.popup__img').setAttribute('src', `./assets/img/${card.img}`);
+  document.querySelector('.popup__name').innerText = card.name;
+  document.querySelector('.popup__type').innerText = card.type;
+  document.querySelector('.popup__breed').innerText = card.breed;
+  document.querySelector('.popup__description').innerText = card.description;
+  document.querySelector('.popup__age').innerText = card.age;
+  document.querySelector('.popup__inoculations').innerText = card.inoculations;
+  document.querySelector('.popup__diseases').innerText = card.diseases;
+  document.querySelector('.popup__parasites').innerText = card.parasites;
+  popup.style.display = 'block';
+}
+
+popupCloseBtn.addEventListener('click', () => {
+  popup.style.display = 'none';
+});
+
+document.addEventListener('click', (e) => {
+  if (e.target === popup) {
+    e.stopPropagation();
+    popup.style.display = 'none';
+  }
+})
 
 function updateCards(direction) {
   // Сохраняем текущие карточки
@@ -130,17 +157,6 @@ window.addEventListener('resize', function () {
   clearTimeout(timeout);
   timeout = setTimeout(changeByResize, 200);
 });
-
-// window.addEventListener('resize', () => {
-//   if (window.innerWidth < 768) {
-//     cardsPerSlide = 1;
-//   } else if (window.innerWidth < 1280) {
-//     cardsPerSlide = 2;
-//   } else {
-//     cardsPerSlide = 3;
-//   }
-//   renderCards(getRandomCards(previousCards));
-// });
 
 document.addEventListener('DOMContentLoaded', function () {
   showDropdownList();

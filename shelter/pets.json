@@ -77,7 +77,7 @@
     "parasites": ["none"]
   },
   {
-    "name": "Charly",
+    "name": "Charly", 
     "img": "pets-charly.png",
     "type": "Dog",
     "breed": "Jack Russell Terrier",
