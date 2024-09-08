@@ -82,8 +82,22 @@
               <path d="M14 2V4H3V6L0 3L3 0V2H14Z" fill="currentColor" />
             </svg>
           </button>
+          <ul class="pets__carousel pets__list list-reset"></ul>
+          <button type="button" class="slider__btn slider__btn--next">
+            <svg width="14" height="6" viewBox="0 0 14 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M14 2V4H3V6L0 3L3 0V2H14Z" fill="currentColor" />
+            </svg>
+          </button>
+        </div>
+
+        <!-- <div class="pets__slider slider">
+          <button type="button" class="slider__btn slider__btn--prev">
+            <svg width="14" height="6" viewBox="0 0 14 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M14 2V4H3V6L0 3L3 0V2H14Z" fill="currentColor" />
+            </svg>
+          </button>
           <ul class="pets__list list-reset">
-            <li class="pets__item slide">
+            <li class="pets__item">
               <div class="pets__content">
                 <div class="pets__image">
                   <img src="./assets/img/pets-katrine.png" width="270" height="270" alt="Photo of a cat.">
@@ -92,7 +106,7 @@
                 <button type="button" class="pets__more-btn">Learn more</button>
               </div>
             </li>
-            <li class="pets__item slide">
+            <li class="pets__item">
               <div class="pets__content">
                 <div class="pets__image">
                   <img src="./assets/img/pets-jennifer.png" width="270" height="270" alt="Photo of a puppy.">
@@ -101,7 +115,7 @@
                 <button type="button" class="pets__more-btn">Learn more</button>
               </div>
             </li>
-            <li class="pets__item slide">
+            <li class="pets__item">
               <div class="pets__content">
                 <div class="pets__image">
                   <img src="./assets/img/pets-woody.png" width="270" height="270" alt="Photo of a dog.">
@@ -116,7 +130,7 @@
               <path d="M14 2V4H3V6L0 3L3 0V2H14Z" fill="currentColor" />
             </svg>
           </button>
-        </div>
+        </div> -->
         <a class="pets__link" href="pets.html">Get to know the rest</a>
       </div>
     </section>
@@ -218,6 +232,15 @@
       </div>
     </div>
   </footer>
+
+  <div class="popup" id="popup">
+    <div class="popup-content">
+      <span class="close">&times;</span>
+      <h2 id="animal-name"></h2>
+      <p id="animal-age"></p>
+      <p id="animal-gender"></p>
+    </div>
+  </div>
 
   <script src="./assets/script.js"></script>
 </body>
