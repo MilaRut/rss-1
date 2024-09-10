@@ -1,9 +1,10 @@
-
+const popup = document.querySelector('.popup');
+const popupCloseBtn = document.querySelector('.popup__close-btn');
 const triggers = document.querySelectorAll('.js-dropdown-trigger');
 const navItems = document.querySelectorAll('.nav__item');
 const body = document.querySelector('body');
-const popup = document.querySelector('.popup');
-const popupCloseBtn = document.querySelector('.popup__close-btn');
+
+// MENU
 
 function openMenu(el1, el2) {
   el1.classList.add('is-active');
@@ -49,6 +50,8 @@ function showDropdownList() {
   });
 }
 
+// GET JSON
+
 let petsData = [];
 
 function getData() {
@@ -66,6 +69,7 @@ function getData() {
       console.error('There has been a problem with your fetch operation:', error);
     });
 }
+
 
 let currentIndex = 0;
 let cardsPerSlide = 3; // По умолчанию 3 карточки
