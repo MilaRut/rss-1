@@ -725,7 +725,7 @@ img {
   font-family: var(--font-family);
   font-weight: 400;
   font-size: 20px;
-  line-height: 115%;
+  line-height: 1;
   letter-spacing: 0.06em;
   text-align: center;
   color: var(--color-dark-3xl);
@@ -1281,6 +1281,12 @@ img {
   border: 2px solid var(--color-primary);
   background-color: transparent;
   cursor: pointer;
+  transition: all 0.3s ease-in;
+}
+
+.popup__close-btn:hover {
+  background-color: var(--color-primary-light);
+  border-color: var(--color-primary-light);
 }
 
 .popup__img-wrapper {
