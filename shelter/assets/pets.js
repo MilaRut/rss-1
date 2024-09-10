@@ -141,102 +141,115 @@ const petsData = [
   }
 ];
 
-let currentPage = 1;
-let petsPerPage = 8; // Начальное значение
-let totalPages = 0;
-let petsArray = [];
+// Функция для случайной сортировки
+const shuffleArray = (array) => {
+  return array.sort(() => Math.random() - 0.5);
+};
 
-// Функция для получения уникального набора питомцев
-function getUniquePetsSet() {
-  const shuffledPets = [...petsData].sort(() => Math.random() - 0.5);
-  return shuffledPets.slice(0, 8);
-}
+const shuffledPetsData = shuffleArray(petsData);
+let nestedArray = [];
+let finalArr = [];
 
-// Функция для создания финального массива питомцев
-function createFinalPetsArray() {
-  const uniquePetsSet = getUniquePetsSet();
-  const finalArray = [];
-
+const createFinalArr = () => {
   for (let i = 0; i < 6; i++) {
-    const shuffledSet = [...uniquePetsSet].sort(() => Math.random() - 0.5);
-    finalArray.push(...shuffledSet);
-  }
-
-  // Перемешиваем финальный массив
-  for (let i = 0; i < finalArray.length; i++) {
-    const randomIndex = Math.floor(Math.random() * finalArray.length);
-    [finalArray[i], finalArray[randomIndex]] = [finalArray[randomIndex], finalArray[i]];
-  }
-
-  // Удаляем соседние дубликаты
-  for (let i = 1; i < finalArray.length; i++) {
-    if (finalArray[i].name === finalArray[i - 1].name) {
-      finalArray.sort(() => Math.random() - 0.5);
-      i = 0;
+    if (i === 1 || i === 5) {
+      nestedArray.push(shuffledPetsData);
+    } else if (i === 2 || i === 6) {
+      let reversed = [];
+      for (let j = 3; j >= 0; j--) {
+        reversed.push(shuffledPetsData[j]);
+      }
+      for (let k = 7; k > 3; k--) {
+        reversed.push(shuffledPetsData[k]);
+      }
+      nestedArray.push(reversed);
+    } else if (i === 3) {
+      let shuffled = [];
+      shuffled.push(shuffledPetsData[0]);
+      shuffled.push(shuffledPetsData[2]);
+      shuffled.push(shuffledPetsData[1]);
+      shuffled.push(shuffledPetsData[3]);
+      shuffled.push(shuffledPetsData[5]);
+      shuffled.push(shuffledPetsData[4]);
+      shuffled.push(shuffledPetsData[7]);
+      shuffled.push(shuffledPetsData[6]);
+      nestedArray.push(shuffled);
+    } else {
+      let shuffled = [];
+      shuffled.push(shuffledPetsData[2]);
+      shuffled.push(shuffledPetsData[3]);
+      shuffled.push(shuffledPetsData[0]);
+      shuffled.push(shuffledPetsData[1]);
+      shuffled.push(shuffledPetsData[7]);
+      shuffled.push(shuffledPetsData[6]);
+      shuffled.push(shuffledPetsData[4]);
+      shuffled.push(shuffledPetsData[5]);
+      nestedArray.push(shuffled);
     }
   }
-
-  return finalArray;
+  finalArr = nestedArray.flat();
+  console.log(finalArr);
 }
 
-// Функция для определения количества карточек в зависимости от ширины экрана
-function updatePetsPerPage() {
+createFinalArr();
+
+const petsList = document.getElementById('petsList');
+const currentPageElem = document.getElementById('currentPage');
+const firstPageBtn = document.getElementById('firstPage');
+const prevPageBtn = document.getElementById('prevPage');
+const nextPageBtn = document.getElementById('nextPage');
+const lastPageBtn = document.getElementById('lastPage');
+
+let currentPage = 1;
+let itemsPerPage = 8;
+
+function updateItemsPerPage() {
   const width = window.innerWidth;
-  if (width > 1280) {
-    petsPerPage = 8;
+  if (width >= 1280) {
+    itemsPerPage = 8;
   } else if (width >= 768) {
-    petsPerPage = 6;
+    itemsPerPage = 6;
   } else {
-    petsPerPage = 3;
+    itemsPerPage = 3;
   }
-  totalPages = Math.ceil(petsArray.length / petsPerPage);
 }
 
-// Инициализация массива питомцев
-function initPetsArray() {
-  petsArray = createFinalPetsArray();
-  updatePetsPerPage(); // Устанавливаем количество карточек
-}
-
-// Функция для отображения карточек на странице
-function displayPets() {
-  const petsList = document.getElementById('petsList');
+function renderCards() {
   petsList.innerHTML = '';
+  const start = (currentPage - 1) * itemsPerPage;
+  const end = start + itemsPerPage;
+  const itemsToRender = finalArr.slice(start, end);
 
-  const startIndex = (currentPage - 1) * petsPerPage;
-  const endIndex = startIndex + petsPerPage;
-  const petsToDisplay = petsArray.slice(startIndex, endIndex);
-
-  petsToDisplay.forEach(pet => {
+  itemsToRender.forEach(item => {
     const petItem = document.createElement('li');
     petItem.className = 'pets__item';
     petItem.innerHTML = `
       <div class="pets__content">
           <div class="pets__image">
-              <img src="./assets/img/${pet.img}" width="270" height="270" alt="Photo of ${pet.name}.">
+              <img src="./assets/img/${item.img}" width="270" height="270" alt="Photo of ${item.name}.">
           </div>
-          <p class="pets__name">${pet.name}</p>
+          <p class="pets__name">${item.name}</p>
           <button type="button" class="pets__more-btn">Learn more</button>
       </div>
   `;
     petsList.appendChild(petItem);
-    petItem.addEventListener('click', () => openPopup(pet));
+    petItem.addEventListener('click', () => openPopup(item));
   });
 
-  document.getElementById('currentPage').innerText = currentPage;
+  currentPageElem.textContent = currentPage;
   updatePaginationButtons();
 }
 
-function openPopup(pet) {
-  document.querySelector('.popup__img').setAttribute('src', `./assets/img/${pet.img}`);
-  document.querySelector('.popup__name').innerText = pet.name;
-  document.querySelector('.popup__type').innerText = pet.type;
-  document.querySelector('.popup__breed').innerText = pet.breed;
-  document.querySelector('.popup__description').innerText = pet.description;
-  document.querySelector('.popup__age').innerText = pet.age;
-  document.querySelector('.popup__inoculations').innerText = pet.inoculations;
-  document.querySelector('.popup__diseases').innerText = pet.diseases;
-  document.querySelector('.popup__parasites').innerText = pet.parasites;
+function openPopup(item) {
+  document.querySelector('.popup__img').setAttribute('src', `./assets/img/${item.img}`);
+  document.querySelector('.popup__name').innerText = item.name;
+  document.querySelector('.popup__type').innerText = item.type;
+  document.querySelector('.popup__breed').innerText = item.breed;
+  document.querySelector('.popup__description').innerText = item.description;
+  document.querySelector('.popup__age').innerText = item.age;
+  document.querySelector('.popup__inoculations').innerText = item.inoculations;
+  document.querySelector('.popup__diseases').innerText = item.diseases;
+  document.querySelector('.popup__parasites').innerText = item.parasites;
   popup.style.display = 'block';
 }
 
@@ -251,56 +264,42 @@ document.addEventListener('click', (e) => {
   }
 })
 
-// Функция для обновления состояния кнопок пагинации
 function updatePaginationButtons() {
-  document.getElementById('prevPage').classList.toggle('disabled', currentPage === 1);
-  document.getElementById('nextPage').classList.toggle('disabled', currentPage === totalPages);
-  document.getElementById('firstPage').classList.toggle('disabled', currentPage === 1);
-  document.getElementById('lastPage').classList.toggle('disabled', currentPage === totalPages);
+  const totalPages = Math.ceil(finalArr.length / itemsPerPage);
+  firstPageBtn.classList.toggle('disabled', currentPage === 1);
+  prevPageBtn.classList.toggle('disabled', currentPage === 1);
+  nextPageBtn.classList.toggle('disabled', currentPage === totalPages);
+  lastPageBtn.classList.toggle('disabled', currentPage === totalPages);
 }
 
-// Обработчики событий для кнопок пагинации
-document.getElementById('nextPage').addEventListener('click', (e) => {
+function goToPage(page) {
+  currentPage = Math.max(1, Math.min(page, Math.ceil(finalArr.length / itemsPerPage)));
+  renderCards();
+}
+
+firstPageBtn.addEventListener('click', (e) => {
   e.preventDefault();
-  if (currentPage < totalPages) {
-    currentPage++;
-    displayPets();
-  }
+  goToPage(1);
+});
+prevPageBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  goToPage(currentPage - 1)
+});
+nextPageBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  goToPage(currentPage + 1)
+});
+lastPageBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  goToPage(Math.ceil(finalArr.length / itemsPerPage))
 });
 
-document.getElementById('prevPage').addEventListener('click', (e) => {
-  e.preventDefault();
-  if (currentPage > 1) {
-    currentPage--;
-    displayPets();
-  }
-});
-
-document.getElementById('firstPage').addEventListener('click', (e) => {
-  e.preventDefault();
-  currentPage = 1;
-  displayPets();
-});
-
-document.getElementById('lastPage').addEventListener('click', (e) => {
-  e.preventDefault();
-  currentPage = totalPages;
-  displayPets();
-});
-
-// Обработчик события изменения размера окна
 window.addEventListener('resize', () => {
-  updatePetsPerPage();
-  currentPage = 1; // Сбрасываем на первую страницу при изменении размера
-  displayPets();
+  updateItemsPerPage();
+  goToPage(1); // Сброс на первую страницу при изменении размера
 });
 
-// Инициализация при загрузке страницы
-window.onload = () => {
-  initPetsArray();
-  displayPets();
-};
-
-document.addEventListener('DOMContentLoaded', function () {
-  showDropdownList();
-});
+// Инициализация
+updateItemsPerPage();
+renderCards();
+showDropdownList()
