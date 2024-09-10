@@ -152,23 +152,25 @@ let finalArr = [];
 
 const createFinalArr = () => {
   for (let i = 0; i < 6; i++) {
-    if (i === 1 || i === 5) {
+    if (i === 1 || i === 4) {
       nestedArray.push(shuffledPetsData);
-    } else if (i === 2 || i === 6) {
-      let reversed = [];
-      for (let j = 3; j >= 0; j--) {
-        reversed.push(shuffledPetsData[j]);
-      }
-      for (let k = 7; k > 3; k--) {
-        reversed.push(shuffledPetsData[k]);
-      }
-      nestedArray.push(reversed);
+    } else if (i === 2 || i === 5) {
+      let shuffled = [];
+      shuffled.push(shuffledPetsData[3]);
+      shuffled.push(shuffledPetsData[2]);
+      shuffled.push(shuffledPetsData[1]);
+      shuffled.push(shuffledPetsData[0]);
+      shuffled.push(shuffledPetsData[7]);
+      shuffled.push(shuffledPetsData[6]);
+      shuffled.push(shuffledPetsData[5]);
+      shuffled.push(shuffledPetsData[4]);
+      nestedArray.push(shuffled);
     } else if (i === 3) {
       let shuffled = [];
       shuffled.push(shuffledPetsData[0]);
+      shuffled.push(shuffledPetsData[3]);
       shuffled.push(shuffledPetsData[2]);
       shuffled.push(shuffledPetsData[1]);
-      shuffled.push(shuffledPetsData[3]);
       shuffled.push(shuffledPetsData[5]);
       shuffled.push(shuffledPetsData[4]);
       shuffled.push(shuffledPetsData[7]);
@@ -180,10 +182,10 @@ const createFinalArr = () => {
       shuffled.push(shuffledPetsData[3]);
       shuffled.push(shuffledPetsData[0]);
       shuffled.push(shuffledPetsData[1]);
-      shuffled.push(shuffledPetsData[7]);
-      shuffled.push(shuffledPetsData[6]);
       shuffled.push(shuffledPetsData[4]);
       shuffled.push(shuffledPetsData[5]);
+      shuffled.push(shuffledPetsData[7]);
+      shuffled.push(shuffledPetsData[6]);
       nestedArray.push(shuffled);
     }
   }
