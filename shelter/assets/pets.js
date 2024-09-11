@@ -252,17 +252,17 @@ function openPopup(item) {
   document.querySelector('.popup__inoculations').innerText = item.inoculations;
   document.querySelector('.popup__diseases').innerText = item.diseases;
   document.querySelector('.popup__parasites').innerText = item.parasites;
-  popup.style.display = 'block';
+  popup.classList.add('active');
 }
 
 popupCloseBtn.addEventListener('click', () => {
-  popup.style.display = 'none';
+  popup.classList.remove('active');
 });
 
 document.addEventListener('click', (e) => {
   if (e.target === popup) {
     e.stopPropagation();
-    popup.style.display = 'none';
+    popup.classList.remove('active');
   }
 })
 
