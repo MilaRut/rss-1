@@ -110,17 +110,17 @@ function openPopup(card) {
   document.querySelector('.popup__inoculations').innerText = card.inoculations;
   document.querySelector('.popup__diseases').innerText = card.diseases;
   document.querySelector('.popup__parasites').innerText = card.parasites;
-  popup.style.display = 'block';
+  popup.classList.add('active');
 }
 
 popupCloseBtn.addEventListener('click', () => {
-  popup.style.display = 'none';
+  popup.classList.remove('active');
 });
 
 document.addEventListener('click', (e) => {
   if (e.target === popup) {
     e.stopPropagation();
-    popup.style.display = 'none';
+    popup.classList.remove('active');
   }
 })
 
