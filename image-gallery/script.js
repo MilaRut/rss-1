@@ -1,6 +1,7 @@
 const clientId = "vWthW9gGUoas3gLSoQRpz6yYpqeiBXEAHUSPqcEjruQ";
 const baseUrl = "https://api.unsplash.com/search/photos";
 const gallery = document.querySelector('.gallery');
+const loader = document.querySelector('.loader');
 const form = document.querySelector('.form');
 const searchInput = document.getElementById('search-input');
 const resetBtn = document.querySelector('.header__reset-btn');
@@ -13,6 +14,10 @@ let lastQuery = 'capybara';
 
 async function getPhotos(query) {
   const url = `${baseUrl}?query=${query}&per_page=12&orientation=landscape&client_id=${clientId}`;
+
+  // Показываем лоадер перед началом загрузки
+  loader.style.display = 'grid';
+  gallery.style.display = 'none'; // Скрываем галерею во время загрузки
 
   try {
     const response = await fetch(url);
@@ -35,6 +40,10 @@ async function getPhotos(query) {
 
   } catch (error) {
     console.error('Error fetching data:', error);
+  } finally {
+    // Скрываем лоадер и показываем галерею после завершения загрузки
+    loader.style.display = 'none';
+    gallery.style.display = 'grid'; // Показываем галерею
   }
 }
 
@@ -44,9 +53,9 @@ function showImages(arr) {
   arr.forEach((el) => {
     const newImage = document.createElement('div');
     newImage.classList = 'image-wrapper';
-    newImage.innerHTML = `<img src="${el.urls.regular}" data-name="${el.user.name}" data-link="${el.user.links.html}" alt="Image." title="Click to enlarge" loading="lazy">`;
+    newImage.innerHTML = `<img src="${el.urls.regular}" data-name="${el.user.name}" data-link="${el.user.links.html}" alt="Image." title="Click to enlarge">`;
     gallery.append(newImage);
-  })
+  });
 }
 
 form.addEventListener('submit', function (e) {
@@ -58,9 +67,11 @@ form.addEventListener('submit', function (e) {
 });
 
 form.addEventListener('reset', function () {
-  searchInput.value = lastQuery;
-  getPhotos(lastQuery);
   resetBtn.classList.remove('is-focused');
+  if (gallery.children.length === 0) {
+    searchInput.value = lastQuery;
+    getPhotos(lastQuery);
+  }
 });
 
 searchInput.addEventListener('input', () => {
@@ -68,7 +79,9 @@ searchInput.addEventListener('input', () => {
     resetBtn.classList.add('is-focused');
   } else {
     resetBtn.classList.remove('is-focused');
-    getPhotos(lastQuery);
+    if (gallery.children.length === 0) {
+      getPhotos(lastQuery);
+    }
   }
 });
 
@@ -89,8 +102,8 @@ function initModal() {
       e.preventDefault();
       modal.classList.add('is-active');
       modalImage.innerHTML = '';
-      modalImage.innerHTML = `<img src="${e.target.getAttribute('src')}" loading="lazy">`;
-      modalImageCreds.innerHTML = `Photo by <a href="${e.target.getAttribute('data-link')}" target="_blank">${e.target.getAttribute('data-name')}</a>`
+      modalImage.innerHTML = `<img src="${e.target.getAttribute('src')}">`;
+      modalImageCreds.innerHTML = `Photo by <a href="${e.target.getAttribute('data-link')}" target="_blank">${e.target.getAttribute('data-name')}</a>`;
     }
   });
 
