@@ -44,7 +44,7 @@ function showImages(arr) {
   arr.forEach((el) => {
     const newImage = document.createElement('div');
     newImage.classList = 'image-wrapper';
-    newImage.innerHTML = `<img src="${el.urls.regular}" data-name="${el.user.name}" data-link="${el.user.links.html}" alt="Image." title="Click to enlarge">`;
+    newImage.innerHTML = `<img src="${el.urls.regular}" data-name="${el.user.name}" data-link="${el.user.links.html}" alt="Image." title="Click to enlarge" loading="lazy">`;
     gallery.append(newImage);
   })
 }
@@ -89,7 +89,7 @@ function initModal() {
       e.preventDefault();
       modal.classList.add('is-active');
       modalImage.innerHTML = '';
-      modalImage.innerHTML = `<img src="${e.target.getAttribute('src')}">`;
+      modalImage.innerHTML = `<img src="${e.target.getAttribute('src')}" loading="lazy">`;
       modalImageCreds.innerHTML = `Photo by <a href="${e.target.getAttribute('data-link')}" target="_blank">${e.target.getAttribute('data-name')}</a>`
     }
   });

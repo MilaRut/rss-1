@@ -71,7 +71,6 @@ img {
   align-items: center;
   justify-content: center;
   min-height: 100%;
-  flex-grow: 1;
 }
 
 .header,
@@ -83,6 +82,10 @@ img {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
+}
+
+.main .container {
+  flex-grow: 1;
 }
 
 .header {
@@ -208,6 +211,7 @@ img {
 }
 
 .footer__list {
+  width: 100%;
   list-style: none;
   display: flex;
   align-items: center;
