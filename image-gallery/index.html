@@ -5,11 +5,74 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
   <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
+  <div class="wrapper">
+    <header class="header">
+      <div class="container">
+        <div class="header__heading">
+          <h1>Unsplash API</h1>
+        </div>
+        <div class="header__search">
+          <form class="form">
+            <input type="text" id="search-input" placeholder="Enter keywords" autocomplete="off">
+            <button class="header__reset-btn" type="reset" title="Reset" aria-label="Reset"></button>
+            <button class="header__submit-btn" type="sumbit" id="search-button" title="Search" aria-label="Search">
+            </button>
+          </form>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <div class="container">
+        <div class="gallery"></div>
+        <span class="error-msg">Sorry, nothing was found for your request.</span>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <ul class="footer__list">
+          <li class="footer__item">
+            <a href="https://github.com/MilaRut" class="footer__link">
+              <img class="footer__img" src="./img/svg/github-white.svg" width="40" height="40" alt="GitHub.">
+            </a>
+          </li>
+          <li class="footer__item">
+            <a href="https://rs.school/courses/javascript-preschool-ru" class="footer__link">
+              <div class="footer__img-wrapper">
+                <img class="footer__img" src="./img/svg/rss-logo.svg" width="40" height="40" alt="RS School.">
+              </div>
+            </a>
+          </li>
+          <li class="footer__item">
+            <p class="footer__date">2024</p>
+          </li>
+        </ul>
+      </div>
+    </footer>
+
+    <div class="modal modal--preload">
+      <div class="modal__wrapper">
+        <div class="modal__overlay" data-close-modal></div>
+        <div class="modal__content">
+          <button class="modal__close-btn" type="button" aria-label="Закрыть окно." data-close-modal></button>
+          <div class="modal__image"></div>
+          <div class="modal__footer">
+            <p class="modal__image-creds"></p>
+            <p class="modal__copyright">on <a href="https://unsplash.com/" target="_blank">Unsplash</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
   <script src="./script.js"></script>
 </body>
