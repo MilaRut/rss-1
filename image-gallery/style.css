@@ -318,6 +318,7 @@ img {
   display: block;
   font-size: 24px;
   color: #ffffff;
+  padding-top: 40px;
 }
 
 .show-more {
@@ -583,6 +584,10 @@ img {
 }
 
 .modal__controls {
+  display: none;
+}
+
+body:has(.image-wrapper:nth-child(2)) .modal__controls {
   display: flex;
   justify-content: center;
   gap: 40px;

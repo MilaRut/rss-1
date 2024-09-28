@@ -28,12 +28,14 @@ async function getPhotos(query) {
     if (!response.ok) {
       gallery.innerHTML = '';
       errorMsg.classList.add('is-visible');
+      loader.style.display = 'none';
       throw new Error(`HTTP error! status: ${response.status}`);
     }
 
     const data = await response.json();
     if (data.results.length === 0) {
       gallery.innerHTML = '';
+      loader.style.display = 'none';
       errorMsg.classList.add('is-visible');
     } else {
       errorMsg.classList.remove('is-visible');
@@ -71,7 +73,10 @@ function showImages(arr) {
 
     img.addEventListener('load', () => {
       loadedImagesCount++;
-      if ((isMobile && loadedImagesCount == 1) || (!isMobile && loadedImagesCount == 11)) {
+      if ((isMobile && arr.length <= 1) || (!isMobile && arr.length <= 12)) {
+        loader.style.display = 'none';
+        gallery.style.display = 'grid';
+      } else if ((isMobile && loadedImagesCount == 1) || (!isMobile && loadedImagesCount == 11)) {
         loader.style.display = 'none';
         gallery.style.display = 'grid';
         showMoreBtn.classList.remove('is-hidden');
