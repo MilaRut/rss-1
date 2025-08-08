@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cosy Gallery</title>
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="My Gallery">
+  <meta property="og:description" content="Discover my photo gallery with tags searching">
+  <meta property="og:url" content="https://rolling-scopes-school.github.io/milarut-JSFEPRESCHOOL2024Q2/image-gallery/">
+  <meta property="og:image"
+    content="https://rolling-scopes-school.github.io/milarut-JSFEPRESCHOOL2024Q2/image-gallery/img/screenshot.png">
+  <meta property="og:site_name" content="Cosy Gallery">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <div class="hover-effect"></div>
+  <div class="wrapper">
+    <header class="header">
+      <div class="container">
+        <div class="header__heading">
+          <p>c
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M6.00001 6.99999L6.50001 7.49999M18 6.99999L17.5 7.49999M10 12V11.5M14 12V11.5M14 16H10M12 16V18M20.8 4.19999C19.2 2.59999 16.7 2.59999 15.1 4.19999L14.1 5.19999C12.7085 4.98251 11.2916 4.98251 9.90001 5.19999L8.90001 4.19999C8.16404 3.43086 7.15267 2.9856 6.0884 2.96216C5.02413 2.93871 3.99414 3.33901 3.22501 4.07499C2.45588 4.81096 2.01062 5.82233 1.98718 6.8866C1.96374 7.95087 2.36404 8.98086 3.10001 9.74999C2.38478 10.8702 2.00324 12.1709 2.00001 13.5C2.00001 18.2 6.50001 22 12 22C17.5 22 22 18.2 22 13.5C22.0063 12.1539 21.6244 10.8345 20.9 9.69999C22.4 8.09999 22.4 5.69999 20.8 4.19999Z"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            sy gallery
+          </p>
+          <label class="header__theme-switcher">
+            <input type="checkbox" name="theme-switcher" id="theme-switcher">
+            <span class="moon">
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M11.4599 21.7501C11.2899 21.7501 11.1199 21.7501 10.9499 21.7401C5.34995 21.4901 0.669948 16.9801 0.279948 11.4801C-0.0600516 6.76011 2.66995 2.35011 7.06995 0.500114C8.31995 -0.0198852 8.97995 0.380114 9.25995 0.670114C9.53995 0.950114 9.92995 1.60011 9.40995 2.79011C8.94995 3.85011 8.71995 4.98011 8.72995 6.14011C8.74995 10.5701 12.4299 14.3301 16.9199 14.5101C17.5699 14.5401 18.2099 14.4901 18.8299 14.3801C20.1499 14.1401 20.6999 14.6701 20.9099 15.0101C21.1199 15.3501 21.3599 16.0801 20.5599 17.1601C18.4399 20.0601 15.0699 21.7501 11.4599 21.7501ZM1.76995 11.3701C2.10995 16.1301 6.16995 20.0301 11.0099 20.2401C14.2999 20.4001 17.4199 18.9001 19.3399 16.2801C19.4899 16.0701 19.5599 15.9201 19.5899 15.8401C19.4999 15.8301 19.3399 15.8201 19.0899 15.8701C18.3599 16.0001 17.5999 16.0501 16.8499 16.0201C11.5699 15.8101 7.24995 11.3801 7.21995 6.16011C7.21995 4.78011 7.48995 3.45011 8.03995 2.20011C8.13995 1.98011 8.15995 1.83011 8.16995 1.75011C8.07995 1.75011 7.91995 1.77011 7.65995 1.88011C3.84995 3.48011 1.48995 7.30011 1.76995 11.3701Z"
+                  fill="#1D1D1D" />
+              </svg>
+            </span>
+            <span class="sun">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M12 19.25C8 19.25 4.75 16 4.75 12C4.75 8 8 4.75 12 4.75C16 4.75 19.25 8 19.25 12C19.25 16 16 19.25 12 19.25ZM12 6.25C8.83 6.25 6.25 8.83 6.25 12C6.25 15.17 8.83 17.75 12 17.75C15.17 17.75 17.75 15.17 17.75 12C17.75 8.83 15.17 6.25 12 6.25Z"
+                  fill="#FAFAFA" />
+                <path
+                  d="M12 22.96C11.45 22.96 11 22.55 11 22V21.92C11 21.37 11.45 20.92 12 20.92C12.55 20.92 13 21.37 13 21.92C13 22.47 12.55 22.96 12 22.96ZM19.14 20.14C18.88 20.14 18.63 20.04 18.43 19.85L18.3 19.72C17.91 19.33 17.91 18.7 18.3 18.31C18.69 17.92 19.32 17.92 19.71 18.31L19.84 18.44C20.23 18.83 20.23 19.46 19.84 19.85C19.65 20.04 19.4 20.14 19.14 20.14ZM4.86 20.14C4.6 20.14 4.35 20.04 4.15 19.85C3.76 19.46 3.76 18.83 4.15 18.44L4.28 18.31C4.67 17.92 5.3 17.92 5.69 18.31C6.08 18.7 6.08 19.33 5.69 19.72L5.56 19.85C5.37 20.04 5.11 20.14 4.86 20.14ZM22 13H21.92C21.37 13 20.92 12.55 20.92 12C20.92 11.45 21.37 11 21.92 11C22.47 11 22.96 11.45 22.96 12C22.96 12.55 22.55 13 22 13ZM2.08 13H2C1.45 13 1 12.55 1 12C1 11.45 1.45 11 2 11C2.55 11 3.04 11.45 3.04 12C3.04 12.55 2.63 13 2.08 13ZM19.01 5.99C18.75 5.99 18.5 5.89 18.3 5.7C17.91 5.31 17.91 4.68 18.3 4.29L18.43 4.16C18.82 3.77 19.45 3.77 19.84 4.16C20.23 4.55 20.23 5.18 19.84 5.57L19.71 5.7C19.52 5.89 19.27 5.99 19.01 5.99ZM4.99 5.99C4.73 5.99 4.48 5.89 4.28 5.7L4.15 5.56C3.76 5.17 3.76 4.54 4.15 4.15C4.54 3.76 5.17 3.76 5.56 4.15L5.69 4.28C6.08 4.67 6.08 5.3 5.69 5.69C5.5 5.89 5.24 5.99 4.99 5.99ZM12 3.04C11.45 3.04 11 2.63 11 2.08V2C11 1.45 11.45 1 12 1C12.55 1 13 1.45 13 2C13 2.55 12.55 3.04 12 3.04Z"
+                  fill="#FAFAFA" />
+              </svg>
+            </span>
+          </label>
+        </div>
+        <div class="header__search">
+          <form class="form">
+            <input type="text" id="search-input" placeholder="Enter keywords" autocomplete="off">
+            <button class="header__reset-btn" type="reset" title="Reset" aria-label="Reset"></button>
+            <button class="header__submit-btn" type="submit" id="search-button" title="Search" aria-label="Search">
+            </button>
+          </form>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <div class="container">
+        <div class="loader">
+          <div class="loader__item"></div>
+          <div class="loader__item"></div>
+          <div class="loader__item"></div>
+          <div class="loader__item"></div>
+          <div class="loader__item"></div>
+          <div class="loader__item"></div>
+          <div class="loader__item"></div>
+          <div class="loader__item"></div>
+          <div class="loader__item"></div>
+          <div class="loader__item"></div>
+          <div class="loader__item"></div>
+          <div class="loader__item"></div>
+        </div>
+        <div class="gallery"></div>
+        <button type="button" class="show-more">
+          <span>Show more</span>
+        </button>
+        <span class="error-msg">Sorry, nothing was found for your request.</span>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <ul class="footer__list">
+          <li class="footer__item">
+            <a href="https://github.com/MilaRut" class="footer__link">
+              <img class="footer__img" src="./img/svg/github-white.svg" width="40" height="40" alt="GitHub.">
+            </a>
+          </li>
+          <li class="footer__item">
+            <a href="https://rs.school/courses/javascript-preschool-ru" class="footer__link">
+              <div class="footer__img-wrapper">
+                <img class="footer__img" src="./img/svg/rss-logo.svg" width="40" height="40" alt="RS School.">
+              </div>
+            </a>
+          </li>
+          <li class="footer__item">
+            <p class="footer__date">2024</p>
+          </li>
+        </ul>
+      </div>
+    </footer>
+
+    <div class="modal modal--preload">
+      <div class="modal__wrapper">
+        <div class="modal__overlay" data-close-modal></div>
+        <div class="modal__content">
+          <button class="modal__close-btn" type="button" aria-label="Закрыть окно." data-close-modal></button>
+          <div class="modal__image"></div>
+          <div class="modal__footer">
+            <p class="modal__image-creds"></p>
+            <p>♡ <span class="modal__likes"></span></p>
+            <p class="modal__copyright">on <a href="https://unsplash.com/" target="_blank">Unsplash</a></p>
+          </div>
+          <div class="modal__controls">
+            <button class="modal__control modal__control--prev">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M15 20.67C14.81 20.67 14.62 20.6 14.47 20.45L7.95003 13.93C6.89003 12.87 6.89003 11.13 7.95003 10.07L14.47 3.55002C14.76 3.26002 15.24 3.26002 15.53 3.55002C15.82 3.84002 15.82 4.32002 15.53 4.61002L9.01003 11.13C8.53003 11.61 8.53003 12.39 9.01003 12.87L15.53 19.39C15.82 19.68 15.82 20.16 15.53 20.45C15.38 20.59 15.19 20.67 15 20.67Z"
+                  fill="currentColor" />
+              </svg>
+            </button>
+            <button class="modal__control modal__control--next">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M8.9101 20.67C8.7201 20.67 8.5301 20.6 8.3801 20.45C8.0901 20.16 8.0901 19.68 8.3801 19.39L14.9001 12.87C15.3801 12.39 15.3801 11.61 14.9001 11.13L8.3801 4.61002C8.0901 4.32002 8.0901 3.84002 8.3801 3.55002C8.6701 3.26002 9.1501 3.26002 9.4401 3.55002L15.9601 10.07C16.4701 10.58 16.7601 11.27 16.7601 12C16.7601 12.73 16.4801 13.42 15.9601 13.93L9.4401 20.45C9.2901 20.59 9.1001 20.67 8.9101 20.67Z"
+                  fill="currentColor" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="./script.js"></script>
+</body>
+
+</html>
